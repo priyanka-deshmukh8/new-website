@@ -8,6 +8,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 import { prisma } from "./prismaDB";
 import type { Adapter } from "next-auth/adapters";
+import { initAuth0 } from '@auth0/nextjs-auth0';
 
 export const authOptions: NextAuthOptions = {
   pages: {
@@ -116,3 +117,5 @@ export const authOptions: NextAuthOptions = {
 
   // debug: process.env.NODE_ENV === "developement",
 };
+
+export default initAuth0(authOptions);
