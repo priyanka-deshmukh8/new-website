@@ -1,5 +1,6 @@
 import React from "react";
-import "../Features/InfiniteCarousel.css"; // CSS for custom animation
+import "../Features/InfiniteCarousel.css";
+import Image from 'next/image';
 
 const InfiniteCarousel: React.FC = () => {
   return (
@@ -14,7 +15,6 @@ const InfiniteCarousel: React.FC = () => {
       <div className="slide-track flex animate-scroll">
         {Array(3)
           .fill([
-            
             "https://imgix.datadoghq.com/img/dd_logo_n_70x75.png?ch=Width,DPR&fit=max&auto=format&w=70&h=75&dpr=2",
             "https://img.icons8.com/?size=100&id=wU62u24brJ44&format=png&color=000000",
             "https://img.icons8.com/?size=100&id=24662&format=png&color=228BE6",
@@ -27,7 +27,7 @@ const InfiniteCarousel: React.FC = () => {
           .flat()
           .map((src, index) => (
             <div key={index} className="slide flex-shrink-0 w-[200px] h-[150px] flex items-center justify-center">
-              <img src={src} alt={`Slide ${index + 1}`} className="w-full h-[90px] object-contain" />
+              <Image src={src} alt={`Slide ${index + 1}`} className="w-full h-[90px] object-contain" width={500} height={300} />
             </div>
           ))}
       </div>

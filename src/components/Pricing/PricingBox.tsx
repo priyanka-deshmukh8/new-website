@@ -64,12 +64,12 @@ const PricingBox = ({ product }: { product: Price }) => {
             Features
           </h3>
           <div className="mb-10">
-            {product?.offers.map((offer, i) => (
-               <div className="flex gap-2">
+            {product?.offers.map((offer, index) => (
+               <div key={index} className="flex gap-2">
                <div>
         <BlueTick />
           </div>
-              <OfferList key={i} text={offer} />
+              <OfferList text={offer} />
             </div>
              ))}
           </div>

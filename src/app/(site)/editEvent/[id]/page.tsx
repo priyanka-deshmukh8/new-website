@@ -6,6 +6,7 @@ import { ref, get, update } from "firebase/database";
 import { rtdb } from "@/firebase/firebaseConfig";
 import { useParams, useRouter } from "next/navigation";
 import PreLoader from "../../../../components/Common/PreLoader";
+import Image from 'next/image';
 
 interface EventData {
   title: string;
@@ -197,9 +198,11 @@ export default withPageAuthRequired(function Profile() {
               Current Image
             </label>
             {eventData.coverImage && (
-              <img
+              <Image
                 src={eventData.coverImage}
                 alt="Current event cover"
+                width={500}
+                height={300}
                 className="w-full h-32 object-cover rounded-md mb-2"
               />
             )}

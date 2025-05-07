@@ -1,5 +1,6 @@
 "use client"; // For Next.js App Router
 import { useEffect, useState } from "react";
+import Image from 'next/image';
 
 // Define the structure of repository data
 interface Repo {
@@ -99,10 +100,12 @@ const ProjectsBanner = () => {
                 }`}
               >
                 <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                  <img
+                  <Image
                     src={`https://opengraph.githubassets.com/${repo.id}/${repo.full_name}`}
                     alt={repo.name}
                     className="w-full h-full object-cover rounded-xl"
+                    width={500}
+                    height={300}
                   />
                 </a>
               </div>
